@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RSVP to Event</title>
+</head>
+<body>
+    <h1>RSVP to {{ event.event_title }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">RSVP</button>
+    </form>
+    <a href="{% url 'view_event' event.pk %}">Back to Event Details</a>
+</body>
+</html>

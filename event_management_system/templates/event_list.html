@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event List</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="/static/event_list.css">
+</head>
+<body>
+    <h1>Event List</h1>
+    <ul>
+        {% for event in events %}
+        <li>
+            <a href="{% url 'view_event' event.pk %}">{{ event.event_title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'signup'%}">signup for full details!</a></p>
+    <a href="{% url 'create_new_event' %}" class="button">Create New Event</a>
+</body>
+</html>
