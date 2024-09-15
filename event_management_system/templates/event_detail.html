@@ -11,17 +11,22 @@
         <p><strong>Description:</strong> {{ event.event_description }}</p>
         <p><strong>Date:</strong> {{ event.event_date }}</p>
         <p><strong>Location:</strong> {{ event.event_location }}</p>
+        <p><strong>No.of Participants:</strong> {{ count }}</p>
+
     </div>
 
     <!-- Links to update or delete the event -->
     <div class="form-container">
         <a href="{% url 'update_event' event.pk %}" class="button">Edit Event</a>
+        <a href="{% url 'signup'%}" class="button">register to join</a></p>
         <form action="{% url 'remove_event' event.pk %}" method="post" style="display:inline;">
             {% csrf_token %}
             <button type="submit" class="button-delete">Delete Event</button>
         </form>
+        
+
     </div>
-    <a href="{% url 'signup'%}">signup for full details!</a></p>
+    
 
     <a href="{% url 'list_events' %}" class="back-link">Back to Event List</a>
 </body>

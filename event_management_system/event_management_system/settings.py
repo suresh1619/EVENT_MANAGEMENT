@@ -71,6 +71,18 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'event_management_system.wsgi.application'
 
+# settings.py
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Replace with your SMTP server address
+EMAIL_PORT = 587                 # Typically 587 for TLS or 465 for SSL
+EMAIL_USE_TLS = True             # Use TLS (Transport Layer Security)
+EMAIL_USE_SSL = False            # Use SSL (Secure Sockets Layer)
+EMAIL_HOST_USER = 'sureshvangara77@gmail.com'  # Your SMTP username
+EMAIL_HOST_PASSWORD = 'gzow vfue iapq faro'       # Your SMTP password
+DEFAULT_FROM_EMAIL = 'radhika@patreon'  # Default email address to use for 'From' field
+
+
 
 
 

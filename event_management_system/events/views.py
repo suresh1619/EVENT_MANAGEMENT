@@ -27,11 +27,13 @@ def create_new_event(request):
 
 def list_events(request):
     events = EventDetail.objects.all()
-    return render(request, 'event_list.html', {'events': events})
+    count = Signup_aten.objects.all().count()
+    return render(request, 'event_list.html', {'events': events,'count':count})
 
 def view_event(request, pk):
     event = get_object_or_404(EventDetail, pk=pk)
-    return render(request, 'event_detail.html', {'event': event})
+    count = Signup_aten.objects.all().count()
+    return render(request, 'event_detail.html', {'event': event,'count':count})
 
 def remove_event(request, pk):
     event = get_object_or_404(EventDetail, pk=pk)
@@ -93,7 +95,7 @@ def signup(request):
     first_name=''
     last_name=''
     email=''
-    username=''
+    Education=''
     password=''
     try:
         if request.method == 'POST':
@@ -129,3 +131,4 @@ def login(request):
     except Exception as e:
         pass
     return render(request,'login.html',ans)
+

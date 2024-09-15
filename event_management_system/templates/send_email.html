@@ -1,0 +1,25 @@
+<!-- send_email.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email</title>
+    <link rel="stylesheet" href="/static/send_email.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Contact Form Submission</h1>
+        </div>
+        <div class="content">
+            <p><strong>Name:</strong> {{ name }}</p>
+            <p><strong>Message:</strong> {{ message }}</p>
+        </div>
+        <div class="footer">
+            <p>&copy; {{ current_year }} Our Company. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
